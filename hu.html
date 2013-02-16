@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible' />
+    <meta content='width=device-width' name='viewport' />
+    <title>numbers and words</title>
+    <script src="javascripts/all.js" type="text/javascript"></script>
+    <link href="stylesheets/all.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class='row-fluid'>
+      <div class='span2'>
+        <ul class="nav nav-list affix"><li><a href="#languages">Támogatott nyelvek</a></li><li><a href="#examples">Példák</a></li><li><a href="#language_options">Magyar specifikus opciók</a></li><li><a href="#requirements">Követelmények</a></li><li><a href="#installation">Installálás</a></li><li><a href="#license">Licensz</a></li><li><a href="#bugs">Hibák és Nyelvi Támogatás</a></li><li><a href="#contact">Elérhetőségek</a></li></ul>
+      </div>
+      <div class='span8 column well'>
+        <div class='section' id='home'>
+  <h1>numbers_and_words</h1>
+  <p>Számok betűvel írva az I18n könyvtár segítségével.</p>
+</div>
+<div class='section' id='languages'>
+  <h2>Támogatott nyelvek</h2>
+  <div id="buttons"><a class="btn" href="./">English</a><a class="btn missing-language" href="#">Русский</a><a class="btn missing-language" href="#">Français</a><a class="btn missing-language" href="#">Українська</a><a class="btn btn-inverse" href="hu.html">Magyar</a><a class="btn btn-danger experimental-language missing-language" href="#">Spanish**</a><a class="btn btn-danger experimental-language missing-language" href="#">Türkçe**</a><a class="btn btn-danger experimental-language missing-language" href="#">Italiano**</a><a class="btn btn-danger experimental-language missing-language" href="#">Nederlands**</a><a class="btn btn-danger experimental-language missing-language" href="#">Swedish**</a></div>
+  <p class="note">** Experimental</p>
+</div>
+<div class='section' id='examples'>
+  <h2>Példák</h2>
+  <pre class="code-example ribbon" data-ribbon="Egész-, tört-, exponenciális- és sorszámok">42.to_words&#x000A;=&gt; &quot;negyvenkettő&quot;&#x000A;&#x000A;21.7.to_words&#x000A;=&gt; &quot;huszonegy egész hét tized&quot;&#x000A;&#x000A;1.234e+42.to_words&#x000A;=&gt; &quot;egy egész kétszázharmincnégy ezredszer tíz a negyvenkettediken&quot;&#x000A;&#x000A;42.to_words ordinal: true&#x000A;=&gt; &quot;negyvenkettedik&quot;</pre>
+  <div class='row-fluid'>
+    <div class='span6'>
+      <pre class="code-example ribbon" data-ribbon="Tömbök">[1, 2, 3].to_words&#x000A;=&gt; [&quot;egy&quot;, &quot;kettő&quot;, &quot;három&quot;]</pre>
+      <pre class="code-example ribbon" data-ribbon="Bármelyik Nyelv">I18n.with_locale(:hu) { 42.to_words }&#x000A;=&gt; &quot;negyvenkettő&quot;</pre>
+    </div>
+    <pre class="span6 code-example ribbon" data-ribbon="Nagy számok">1000100.to_words&#x000A;=&gt; &quot;egymillió-egyszáz&quot;&#x000A;&#x000A;1000000000000000000000000000000000.to_words&#x000A;=&gt; &quot;egykvintilliárd&quot;</pre>
+  </div>
+</div>
+<div class='section' id='language_options'>
+  <h2>Magyar specifikus opciók</h2>
+  <p>Egyelőre nincsenek a magyar nyelvhez egyedi opciók.</p>
+</div>
+<hr />
+<div class='row-fluid'>
+  <div class='section span7' id='requirements'>
+    <h2>Követelmények</h2>
+    <p>1.8.7 <= Ruby (kompatibilis Ruby 1.9-cel, JRuby-val és Rubinius-szal);</p><p>0.5.0 <= I18n (korábbi verziók nincsenek tesztelve);</p>
+  </div>
+  <div class='section span5' id='installation'>
+    <h2>Installálás</h2>
+    <pre>gem install numbers_and_words</pre>
+    
+  </div>
+</div>
+<div class='row-fluid'>
+  <div class='section span7' id='bugs'>
+    <h2>Hibák és Nyelvi Támogatás</h2>
+    <p>Nézd meg a legutóbbi változásokat a CHANGELOG.md fájlban.</p><p>Fork the project. Make your feature addition or bug fix with tests.</p><p>Send a pull request. Bonus points for topic branches.</p>
+  </div>
+  <div class='section span5' id='license'>
+    <h2>Licensz</h2>
+    <p>MIT Licensz</p>
+  </div>
+</div>
+<hr />
+<div class='section' id='contact'>
+  <h2>Elérhetőségek</h2>
+  <ul><li>Kirill Lazarev (mailto:k.s.lazarev@gmail.com)</li><li>Daniel Doubrovkine (http://github.com/dblock)</li><li>Sergey Shkirando (mailto:shkirando.s@yandex.ru)</li><li>Ulrich Sossou (Github[http://github.com/sorich87], {Personal Page}[http://ulrichsossou.com/])</li><li>eLod (http://github.com/eLod)</li></ul>
+</div>
+      </div>
+    </div>
+  </body>
+</html>
