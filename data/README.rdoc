@@ -1,0 +1,95 @@
+== numbers_and_words
+
+Convert numbers to words using the I18n library.
+
+== Supported Languages
+
+* English
+* Русский
+* Français
+* Українська
+* Magyar
+* Spanish**
+* Türkçe**
+* Italiano**
+* Nederlands**
+* Swedish**
+
+** Experimental
+
+== Examples
+
+Integers, Fractionals, Exponentials and Ordinals
+
+    42.to_words
+    => "forty-two"
+
+    21.7.to_words
+    => "twenty-one point seven"
+
+    1.234e+42.to_words
+    => "one and two hundred thirty-four thousandths times ten to the forty-second"
+
+    42.to_words ordinal: true
+    => "forty-second"
+
+Arrays
+
+    [1, 2, 3].to_words
+    => ["one", "two", "three"]
+
+Any Locale
+
+    I18n.with_locale(:hu) { 42.to_words }
+    => "forty-two"
+
+Big numbers
+
+    1000100.to_words
+    => "one million one hundred"
+
+    1000000000000000000000000000000000.to_words
+    => "one decillion"
+
+== Language specific options
+
+==== Remove Hyphen
+Remove hyphen between tens and ones: (remove_hyphen: [true || false], default false)
+
+    21.to_words remove_hyphen: true
+    => "twenty one"
+
+==== Hundreds with Union
+Add 'and' between hundreds and tens: (hundreds_with_union: [true || false], default false)
+
+    111.to_words hundreds_with_union: true
+    => "one hundred and eleven"
+
+== Requirements
+
+* 1.8.7 <= Ruby (compatible with Ruby 1.9, JRuby and Rubinius);
+* 0.5.0 <= I18n (earlier versions not tested);
+
+== Installation
+
+    gem install numbers_and_words
+
+== License
+
+MIT License
+
+== Bugs and Language Support
+
+See CHANGELOG.md for last changes.
+
+Fork the project. Make your feature addition or bug fix with tests.
+
+Send a pull request. Bonus points for topic branches.
+
+== Contacts
+
+* Kirill Lazarev (mailto:k.s.lazarev@gmail.com)
+* Daniel Doubrovkine (http://github.com/dblock)
+* Sergey Shkirando (mailto:shkirando.s@yandex.ru)
+* Ulrich Sossou (Github[http://github.com/sorich87], {Personal Page}[http://ulrichsossou.com/])
+* eLod (http://github.com/eLod)

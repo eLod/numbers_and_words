@@ -1,0 +1,50 @@
+- content_for :navigation, navigation(readme, class: "nav nav-list affix")
+
+#home.section
+  %h1= readme.home.label
+  = paragraphs readme.home.paragraphs
+
+#languages.section
+  %h2= readme.languages.label
+  = language_buttons readme.languages.languages
+  = paragraphs readme.languages.paragraphs, class: "note"
+
+#examples.section
+  %h2= readme.examples.label
+  = example readme.examples.examples.general
+  .row-fluid
+    .span6
+      = example readme.examples.examples.arrays
+      = example readme.examples.examples.any_locale
+    = example readme.examples.examples.big_numbers, class: "span6"
+
+#language_options.section
+  %h2= readme.language_options.label
+  = paragraphs readme.language_options.paragraphs
+  - readme.language_options.examples.each_slice(2) do |left, right|
+    .row-fluid
+      - [left, right].compact.each do |example|
+        %div{class: right && "span6" || "span12"}
+          = language_specific_example example
+
+%hr
+.row-fluid
+  #requirements.section.span7
+    %h2= readme.requirements.label
+    = paragraphs readme.requirements.requirements
+  #installation.section.span5
+    %h2= readme.installation.label
+    %pre= readme.installation.command
+    = paragraphs readme.installation.paragraphs
+.row-fluid
+  #bugs.section.span7
+    %h2= readme.bugs.label
+    = paragraphs readme.bugs.paragraphs
+  #license.section.span5
+    %h2= readme.license.label
+    = paragraphs readme.license.paragraphs
+
+%hr
+#contact.section
+  %h2= readme.contact.label
+  = list readme.contact.contacts

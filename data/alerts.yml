@@ -1,0 +1,4 @@
+experimental: This language is experimental!
+missing:
+  title: Translation Missing
+  content: Sorry, we don't have a translation for this language!

@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+@import 'bootstrap';
+@import 'bootstrap-responsive';
+@import 'compass/css3/text-shadow';
+
+body {
+  background: url(<%= asset_path :images, "asfalt.png" %>);
+  .nav-list.affix {
+    right:  82.906%;
+    top: 140px;
+    li a { background: whiteSmoke; color: #777; @include text-shadow(0 1px 0 #ffffff); }
+    li a:focus, li a:hover { color: #333; }
+    li:first-child a { @include border-radius(6px 0 0 0); }
+    li:last-child a { @include border-radius(0 0 0 6px); }
+  }
+  .column {
+    margin: 30px 0;
+    .section {
+      padding: 0 40px;
+
+      pre {
+        background: url(<%= asset_path :images, "stressed_linen.png" %>);
+        color: white;
+        &.code-example { font-family: Menlo, Monaco, Consolas, "Courier New", monospace; padding-bottom: 22.5px; }
+      }
+
+      .ribbon {
+        position: relative;
+        z-index: 1;
+        &::before, &::after { display: block; position: absolute; right: -11px; }
+        &::before {
+          content: attr(data-ribbon);
+          bottom: -5px;
+          padding: 0px 10px;
+          height: 30px;
+          line-height: 30px;
+          z-index: 2;
+          background: #fff;
+          color: #212121;
+          font-size: 15px;
+          @include box-shadow(0px 0px 4px rgba(0,0,0,0.55), 0px 0px 4px rgba(255,255,255,0.3));
+        }
+        &::after {
+          content: "";
+          bottom: 25px;
+          border-style: solid;
+          border-color: transparent transparent transparent #bababa;
+          border-width: 10px 0 0 10px;
+          z-index: 1;
+        }
+      }
+
+      p.note { color: #666; font-style: italic; text-align: right; font-size: smaller; }
+    }
+    hr { border-top-color: #ddd; }
+  }
+  #home {
+    h1, p { text-align: center; }
+    p { font-size: 20px; }
+  }
+  #languages {
+    #buttons { margin-top: -4px; text-align: center; }
+    #buttons .btn { margin: 4px 5px 0 0; }
+  }
+  #contact {
+    ul { list-style: none; margin: 0px; }
+    ul li { padding: 4px 0px; }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .nav-list.affix { display: none; }
+}

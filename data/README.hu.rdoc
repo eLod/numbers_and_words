@@ -1,0 +1,85 @@
+== numbers_and_words
+
+Számok betűvel írva az I18n könyvtár segítségével.
+
+== Támogatott nyelvek
+
+* English
+* Русский
+* Français
+* Українська
+* Magyar
+* Spanish**
+* Türkçe**
+* Italiano**
+* Nederlands**
+* Swedish**
+
+** Experimental
+
+== Példák
+
+Egész-, tört-, exponenciális- és sorszámok
+
+    42.to_words
+    => "negyvenkettő"
+
+    21.7.to_words
+    => "huszonegy egész hét tized"
+
+    1.234e+42.to_words
+    => "egy egész kétszázharmincnégy ezredszer tíz a negyvenkettediken"
+
+    42.to_words ordinal: true
+    => "negyvenkettedik"
+
+Tömbök
+
+    [1, 2, 3].to_words
+    => ["egy", "kettő", "három"]
+
+Bármelyik Nyelv
+
+    I18n.with_locale(:hu) { 42.to_words }
+    => "negyvenkettő"
+
+Nagy számok
+
+    1000100.to_words
+    => "egymillió-egyszáz"
+
+    1000000000000000000000000000000000.to_words
+    => "egykvintilliárd"
+
+== Magyar specifikus opciók
+
+Egyelőre nincsenek a magyar nyelvhez egyedi opciók.
+
+== Követelmények
+
+* 1.8.7 <= Ruby (kompatibilis Ruby 1.9-cel, JRuby-val és Rubinius-szal);
+* 0.5.0 <= I18n (korábbi verziók nincsenek tesztelve);
+
+== Installálás
+
+    gem install numbers_and_words
+
+== Licensz
+
+MIT Licensz
+
+== Hibák és Nyelvi Támogatás
+
+Nézd meg a legutóbbi változásokat a CHANGELOG.md fájlban.
+
+Fork the project. Make your feature addition or bug fix with tests.
+
+Send a pull request. Bonus points for topic branches.
+
+== Elérhetőségek
+
+* Kirill Lazarev (mailto:k.s.lazarev@gmail.com)
+* Daniel Doubrovkine (http://github.com/dblock)
+* Sergey Shkirando (mailto:shkirando.s@yandex.ru)
+* Ulrich Sossou (Github[http://github.com/sorich87], {Personal Page}[http://ulrichsossou.com/])
+* eLod (http://github.com/eLod)

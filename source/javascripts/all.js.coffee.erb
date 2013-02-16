@@ -1,0 +1,12 @@
+#= require jquery
+#= require bootstrap
+
+$ ->
+  $('.nav.nav-list a').click (event) ->
+    $target = $($(this).attr 'href')
+    if $target.length > 0
+      $('html, body').stop().animate {scrollTop: $target.offset().top}, 'slow', 'swing' #, 1300,'linear'
+      event.preventDefault()
+  $('a.experimental-language').tooltip placement: 'bottom', title: -> <%= data.alerts.experimental.dump %>
+  $('a.missing-language').popover placement: 'top', title: <%= data.alerts.missing.title.dump %>, content: <%= data.alerts.missing.content.dump %>
+  $('a.missing-language').click -> window.setTimeout (=> $(this).popover 'hide'), 3000
