@@ -10,10 +10,11 @@ end
 def git_update
   system "git fetch origin"
   if `git branch -r` =~ /gh-pages/
-    system "git reset --hard origin/gh-pages"
+    system "git checkout gh-pages"
   else
     system "git checkout master"
     system "git checkout --orphan gh-pages"
+    system "git rm -rf ."
   end
 end
 
